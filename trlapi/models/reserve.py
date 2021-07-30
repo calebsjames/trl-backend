@@ -1,6 +1,8 @@
 from django.db import models
+from django.contrib.auth.models import User
 
-class Container(models.Model):        
+
+class Reserve(models.Model):        
     
     dom = models.DateField()
     color = models.CharField(max_length=200)
@@ -9,5 +11,5 @@ class Container(models.Model):
     size = models.CharField(max_length=200)
     serialNumber = models.CharField(max_length=200)
     notes = models.CharField(max_length=200)
-    user = models.ForeignKey("User", on_delete=models.CASCADE)
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
     
